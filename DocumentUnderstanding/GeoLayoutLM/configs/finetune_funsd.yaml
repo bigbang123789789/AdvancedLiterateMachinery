@@ -1,10 +1,10 @@
 # For workspace name
 # The checkpoint file location to be saved: {workspace}/checkpoints/
 # The log file location to be saved: {workspace}/tensorboard_logs/
-workspace: path/to/workspace/funsd/
+workspace: /kaggle/input/funsdform-understanding-noisy-scanned-documents/dataset/workspace/funsd/
 
 dataset: funsd
-dataset_root_path: path/to/dataset/
+dataset_root_path: /kaggle/input/funsdform-understanding-noisy-scanned-documents/dataset
 task: ee_el
 img_h: 768
 img_w: 768
@@ -12,7 +12,7 @@ img_w: 768
 model:
   backbone: alibaba-damo/geolayoutlm-large-uncased
   config_json: ./configs/GeoLayoutLM/GeoLayoutLM_large_model_config.json
-  model_ckpt: path/to/geolayoutlm_large_pretrain.pt
+  model_ckpt: /kaggle/input/geolayoutlm-large-pretrain-pt
   head: vie
   use_inner_id: true
   max_prob_as_father: true
