@@ -22,7 +22,7 @@ def main():
     #     cfg[mode].dump_dir = os.path.join(cfg[mode].dump_dir, cfg.workspace.strip('/').split('/')[-1])
     # else:
     #     cfg[mode].dump_dir = ''
-    cfg[mode].dump_dir = ''
+    cfg[mode].dump_dir = '/kaggle/working/funsd_result/'
     print(cfg)
 
     # if cfg.pretrained_model_file is None:
