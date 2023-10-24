@@ -12,7 +12,7 @@ img_w: 768
 model:
   backbone: alibaba-damo/geolayoutlm-large-uncased
   config_json: ./configs/GeoLayoutLM/GeoLayoutLM_large_model_config.json
-  model_ckpt: /kaggle/input/geolayoutlm-large-pretrain-pt
+  model_ckpt: /kaggle/input/geolayoutlm-large-pretrain-pt/geolayoutlm_large_pretrain.pt
   head: vie
   use_inner_id: true
   max_prob_as_father: true
