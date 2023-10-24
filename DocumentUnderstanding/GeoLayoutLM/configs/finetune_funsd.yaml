@@ -1,7 +1,7 @@
 # For workspace name
 # The checkpoint file location to be saved: {workspace}/checkpoints/
 # The log file location to be saved: {workspace}/tensorboard_logs/
-workspace: /kaggle/input/funsdform-understanding-noisy-scanned-documents/dataset/workspace/funsd/
+workspace: /kaggle/working/workspace/funsd/
 
 dataset: funsd
 dataset_root_path: /kaggle/input/funsdform-understanding-noisy-scanned-documents/dataset
