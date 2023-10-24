@@ -19,7 +19,7 @@ model:
   max_prob_as_father_upperbound: false
 
 train:
-  batch_size: 2
+  batch_size: 4
   num_samples_per_epoch: 149
   max_seq_length: 512
   max_block_num: 150
