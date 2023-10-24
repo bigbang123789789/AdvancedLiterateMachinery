@@ -11,7 +11,7 @@ from pytorch_lightning.plugins import DDPPlugin
 
 def get_config(default_conf_file="/kaggle/working/AdvancedLiterateMachinery/DocumentUnderstanding/GeoLayoutLM/configs/default.yaml"):
     cfg = OmegaConf.load(default_conf_file)
-
+    print(cfg)
     cfg_cli = _get_config_from_cli()
     if "config" in cfg_cli:
         cfg_cli_config = OmegaConf.load(cfg_cli.config)
@@ -26,6 +26,7 @@ def get_config(default_conf_file="/kaggle/working/AdvancedLiterateMachinery/Docu
 
 
 def _get_config_from_cli():
+    print(OmegaConf.from_cli())
     cfg_cli = OmegaConf.from_cli()
     cli_keys = list(cfg_cli.keys())
     for cli_key in cli_keys:
