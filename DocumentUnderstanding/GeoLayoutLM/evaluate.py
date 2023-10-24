@@ -111,6 +111,7 @@ def main():
             print(f"{key}: {value:.4f}", end=' | ')
         print()
     # Visualize
+    print(cfg)
     if len(cfg[mode].dump_dir) > 0:
         visualize_tagging(cfg[mode].dump_dir)
         visualize_linking(cfg[mode].dump_dir)
