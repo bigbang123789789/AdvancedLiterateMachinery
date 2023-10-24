@@ -18,10 +18,11 @@ from utils import get_class_names, get_config, get_label_map
 def main():
     mode = "val"
     cfg = get_config()
-    if cfg[mode].dump_dir is not None:
-        cfg[mode].dump_dir = os.path.join(cfg[mode].dump_dir, cfg.workspace.strip('/').split('/')[-1])
-    else:
-        cfg[mode].dump_dir = ''
+    # if cfg[mode].dump_dir is not None:
+    #     cfg[mode].dump_dir = os.path.join(cfg[mode].dump_dir, cfg.workspace.strip('/').split('/')[-1])
+    # else:
+    #     cfg[mode].dump_dir = ''
+    cfg[mode].dump_dir = ''
     print(cfg)
 
     if cfg.pretrained_model_file is None:
