@@ -19,7 +19,7 @@ anno_dir = 'annotations'
 #     os.system("unzip dataset.zip")
 #     os.system("rm -rf dataset.zip __MACOSX")
 
-OUTPUT_PATH = "/kaggle/input/funsdform-understanding-noisy-scanned-documents/dataset/funsd_geo"
+OUTPUT_PATH = "/kaggle/working/funsd_geo"
 os.makedirs(OUTPUT_PATH, exist_ok=True)
 os.makedirs(os.path.join(OUTPUT_PATH, "preprocessed"), exist_ok=True)
 
