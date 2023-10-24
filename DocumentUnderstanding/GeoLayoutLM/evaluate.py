@@ -25,20 +25,31 @@ def main():
     cfg[mode].dump_dir = ''
     print(cfg)
 
-    if cfg.pretrained_model_file is None:
-        pt_list = os.listdir(os.path.join(cfg.workspace, "checkpoints"))
-        if len(pt_list) == 0:
-            print("Checkpoint file is NOT FOUND!")
-            exit(-1)
-        pt_to_be_loaded = pt_list[0]
-        if len(pt_list) > 1:
-            # import ipdb;ipdb.set_trace()
-            for pt in pt_list:
-                if cfg[mode].pretrained_best_type in pt:
-                    pt_to_be_loaded = pt
-                    break
-        cfg.pretrained_model_file = os.path.join(cfg.workspace, "checkpoints", pt_to_be_loaded)
-
+    # if cfg.pretrained_model_file is None:
+    #     pt_list = os.listdir(os.path.join(cfg.workspace, "checkpoints"))
+    #     if len(pt_list) == 0:
+    #         print("Checkpoint file is NOT FOUND!")
+    #         exit(-1)
+    #     pt_to_be_loaded = pt_list[0]
+    #     if len(pt_list) > 1:
+    #         # import ipdb;ipdb.set_trace()
+    #         for pt in pt_list:
+    #             if cfg[mode].pretrained_best_type in pt:
+    #                 pt_to_be_loaded = pt
+    #                 break
+    #     cfg.pretrained_model_file = os.path.join(cfg.workspace, "checkpoints", pt_to_be_loaded)
+    pt_list = os.listdir(os.path.join(cfg.workspace, "checkpoints"))
+    if len(pt_list) == 0:
+        print("Checkpoint file is NOT FOUND!")
+        exit(-1)
+    pt_to_be_loaded = pt_list[0]
+    if len(pt_list) > 1:
+        # import ipdb;ipdb.set_trace()
+        for pt in pt_list:
+            if cfg[mode].pretrained_best_type in pt:
+                pt_to_be_loaded = pt
+                break
+    cfg.pretrained_model_file = os.path.join(cfg.workspace, "checkpoints", pt_to_be_loaded)
     net = get_model(cfg)
 
     load_model_weight(net, cfg.pretrained_model_file)
