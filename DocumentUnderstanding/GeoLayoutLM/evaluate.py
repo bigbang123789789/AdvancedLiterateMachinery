@@ -172,6 +172,7 @@ def visualize_linking(detail_path):
                 blk_coord = [int(v) for v in blk_coord.split(',')]
                 blk_coord_dict[blk_id] = blk_coord
             # read links and draw
+            print(blk_coord_dict)
             color_box = (205, 116, 24)
             color_lk = {"RIGHT": (0, 255, 0), "MISS": (59, 150, 241), "ERROR": (0, 0, 255)} # green, yellow, red
             while True:
