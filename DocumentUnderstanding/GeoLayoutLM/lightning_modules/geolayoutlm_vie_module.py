@@ -226,7 +226,7 @@ def do_eval_step_el(batch, head_outputs, loss, eval_kwargs, dump_dir=''):
 
     if head_outputs["max_prob_as_father"]:
         prob_linking = torch.sigmoid(head_outputs["logits4linking_list"][-1])
-        print('prob_linking',prob_linking)
+        
         head_outputs["pred4linking2"] = torch.where(
                 prob_linking >= 0.5, \
                 prob_linking,
