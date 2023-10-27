@@ -10,6 +10,7 @@ from utils import get_callbacks, get_config, get_loggers, get_plugins
 
 def main():
     cfg = get_config()
+    cfg.seed=1
     print(cfg)
 
     os.environ["TOKENIZERS_PARALLELISM"] = "false"  # prevent deadlock with tokenizer
