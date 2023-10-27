@@ -11,6 +11,8 @@ from utils import get_callbacks, get_config, get_loggers, get_plugins
 def main():
     cfg = get_config()
     cfg.seed=1
+    cfg.cudnn_deterministic=False
+    cfg.cudnn_benchmark=True
     print(cfg)
 
     os.environ["TOKENIZERS_PARALLELISM"] = "false"  # prevent deadlock with tokenizer
