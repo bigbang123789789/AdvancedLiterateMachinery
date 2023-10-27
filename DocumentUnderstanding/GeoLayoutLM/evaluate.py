@@ -23,6 +23,9 @@ def main():
     # else:
     #     cfg[mode].dump_dir = ''
     cfg[mode].dump_dir = '/kaggle/working/funsd_result/'
+    cfg.seed=1
+    cfg.cudnn_deterministic=False
+    cfg.cudnn_benchmark=True
     print(cfg)
 
     # if cfg.pretrained_model_file is None:
