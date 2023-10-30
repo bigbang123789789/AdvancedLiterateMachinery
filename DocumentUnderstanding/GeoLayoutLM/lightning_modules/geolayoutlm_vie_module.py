@@ -236,7 +236,7 @@ def do_eval_step_el(batch, head_outputs, loss, eval_kwargs, dump_dir=''):
         max_index = pr_el_labels.argmax()
 
         # Convert the index to a tuple of coordinates
-        max_index_coordinates = torch.unravel_index(max_index, pr_el_labels.shape)
+        max_index_coordinates = divmod(max_index, pr_el_labels.shape[-1])
         
         print("Index of maximum value:", max_index)
         print("Coordinates of maximum value:", max_index_coordinates)
@@ -245,7 +245,7 @@ def do_eval_step_el(batch, head_outputs, loss, eval_kwargs, dump_dir=''):
         max_index = pr_el_labels.argmax()
 
         # Convert the index to a tuple of coordinates
-        max_index_coordinates = torch.unravel_index(max_index, pr_el_labels.shape)
+        max_index_coordinates = divmod(max_index, pr_el_labels.shape[-1])
         
         print("Index of maximum value:", max_index)
         print("Coordinates of maximum value:", max_index_coordinates)
