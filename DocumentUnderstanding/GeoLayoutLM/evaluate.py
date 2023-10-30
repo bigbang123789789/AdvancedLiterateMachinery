@@ -191,8 +191,7 @@ def visualize_linking(detail_path):
                 cv2.rectangle(img, tuple(box_son[:2]), tuple(box_son[2:]), color_box, 1)
                 center_son = ((box_son[0] + box_son[2]) // 2, (box_son[1] + box_son[3]) // 2)
                 # link
-                if flag=="RIGHT" or flag=="ERROR":
-                    cv2.arrowedLine(img, center_father, center_son, color_lk["RIGHT"], thickness=1, tipLength=0.06)
+                cv2.arrowedLine(img, center_father, center_son, color_lk[flag], thickness=1, tipLength=0.06)
         vis_fn = os.path.splitext(os.path.basename(fp))[0] + '.png'
         cv2.imwrite(os.path.join(vis_dir, vis_fn), img)
 
