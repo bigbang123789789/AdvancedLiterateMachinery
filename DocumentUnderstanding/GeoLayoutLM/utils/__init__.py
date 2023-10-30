@@ -28,7 +28,7 @@ def get_config(default_conf_file="/kaggle/working/AdvancedLiterateMachinery/Docu
 def _get_config_from_cli():
     
     # cfg_cli = OmegaConf.from_cli()
-    cfg_cli={'-f': None, '/root/': {'local/share/jupyter/runtime/kernel-3d59a3c6-2859-41a2-98ae-87f6e52efb95': {'json': None}}}
+    cfg_cli={'-f': None, '/root/': {'local/share/jupyter/runtime/kernel-a9bf5e22-6088-4f70-8b3f-eda2f1ef316a': {'json': None}}}
     cli_keys = list(cfg_cli.keys())
     for cli_key in cli_keys:
         if "--" in cli_key:
