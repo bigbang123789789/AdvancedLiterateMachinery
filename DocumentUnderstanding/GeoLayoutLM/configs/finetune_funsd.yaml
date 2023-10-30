@@ -4,7 +4,7 @@
 workspace: /kaggle/working/workspace/funsd/
 
 dataset: funsd
-dataset_root_path: /kaggle/working/sroie-test/sroie_test
+dataset_root_path:/kaggle/working/funsd_sroie
 task: ee_el
 img_h: 768
 img_w: 768
