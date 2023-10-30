@@ -1,10 +1,10 @@
 # For workspace name
 # The checkpoint file location to be saved: {workspace}/checkpoints/
 # The log file location to be saved: {workspace}/tensorboard_logs/
-workspace: /kaggle/working/workspace/funsd/
+workspace: /kaggle/working/workspace/sroie_train/
 
 dataset: funsd
-dataset_root_path: /kaggle/working/funsd_sroie
+dataset_root_path: /kaggle/working/sroie-train/sroie_train
 task: ee_el
 img_h: 768
 img_w: 768
@@ -50,7 +50,7 @@ val:
   batch_size: 2
   num_workers: 4
   limit_val_batches: 1.0
-  dump_dir: /kaggle/working/funsd_result/
+  dump_dir: /kaggle/working/sroie_train/
   pretrained_best_type: linking # labeling, linking
 
 pretrained_model_file: ~
