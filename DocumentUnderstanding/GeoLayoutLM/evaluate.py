@@ -42,7 +42,7 @@ def main():
     #                 break
     #     cfg.pretrained_model_file = os.path.join(cfg.workspace, "checkpoints", pt_to_be_loaded)
    
-    cfg.pretrained_model_file = '/kaggle/input/re-linking-pt/epoch_182-f1_linking_0_8923.pt'
+    cfg.pretrained_model_file = '/kaggle/working/workspace/sroie_train/checkpoints/epoch=91-f1_linking=0.9678.pt'
     net = get_model(cfg)
 
     load_model_weight(net, cfg.pretrained_model_file)
@@ -191,8 +191,8 @@ def visualize_linking(detail_path):
                 cv2.rectangle(img, tuple(box_son[:2]), tuple(box_son[2:]), color_box, 1)
                 center_son = ((box_son[0] + box_son[2]) // 2, (box_son[1] + box_son[3]) // 2)
                 # link
-                if flag=="RIGHT" or flag=="MISS":
-                    cv2.arrowedLine(img, center_father, center_son, color_lk[flag], thickness=1, tipLength=0.06)
+                
+                cv2.arrowedLine(img, center_father, center_son, color_lk[flag], thickness=1, tipLength=0.06)
         vis_fn = os.path.splitext(os.path.basename(fp))[0] + '.png'
         cv2.imwrite(os.path.join(vis_dir, vis_fn), img)
 
