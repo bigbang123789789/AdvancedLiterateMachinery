@@ -42,7 +42,7 @@ def main():
     #                 break
     #     cfg.pretrained_model_file = os.path.join(cfg.workspace, "checkpoints", pt_to_be_loaded)
    
-    cfg.pretrained_model_file = '/kaggle/working/workspace/sroie_train/checkpoints/epoch=91-f1_linking=0.9678.pt'
+    cfg.pretrained_model_file = '/kaggle/input/geolayoutlm-large-pretrain-pt/geolayoutlm_large_pretrain.pt'
     net = get_model(cfg)
 
     load_model_weight(net, cfg.pretrained_model_file)
