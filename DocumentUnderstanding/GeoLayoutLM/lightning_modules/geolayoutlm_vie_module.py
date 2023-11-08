@@ -234,13 +234,12 @@ def do_eval_step_el(batch, head_outputs, loss, eval_kwargs, dump_dir=''):
 
         pr_el_labels = head_outputs["pred4linking2"]
         max_index = pr_el_labels.argmax()     
-        print("Index of maximum value:", max_index)
 
     else:
         pr_el_labels = head_outputs["pred4linking"]
         max_index = pr_el_labels.argmax()
       
-        print("Index of maximum value:", max_index)
+
 
         
     n_batch_gt_rel, n_batch_pr_rel, n_batch_correct_rel = eval_el_geo_batch(
