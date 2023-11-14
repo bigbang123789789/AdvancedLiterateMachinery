@@ -127,7 +127,7 @@ def do_preprocess(tokenizer, dataset_split):
         # meta
         out_json_obj["meta"] = {}
         image_file = (
-            os.path.splitext(json_file.replace(f"/{anno_dir}/", "/images/"))[0] + ".jpg"
+            os.path.splitext(json_file.replace(f"/{anno_dir}/", "/images/"))[0] + "jpg"
         )
         if dataset_split == "train":
             out_json_obj["meta"]["image_path"] = image_file[
