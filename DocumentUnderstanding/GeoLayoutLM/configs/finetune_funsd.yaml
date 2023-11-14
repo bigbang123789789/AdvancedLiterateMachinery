@@ -1,10 +1,10 @@
 # For workspace name
 # The checkpoint file location to be saved: {workspace}/checkpoints/
 # The log file location to be saved: {workspace}/tensorboard_logs/
-workspace: /kaggle/working/workspace/funsd/
+workspace: /kaggle/working/workspace/
 
 dataset: funsd
-dataset_root_path: /kaggle/working/funsd_sroie
+dataset_root_path: /kaggle/working/invoice-convenience-store/invoice_convenience_store
 task: ee_el
 img_h: 768
 img_w: 768
