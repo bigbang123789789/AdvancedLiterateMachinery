@@ -50,7 +50,7 @@ val:
   batch_size: 2
   num_workers: 4
   limit_val_batches: 1.0
-  dump_dir: /kaggle/working/sroie_train/
+  dump_dir: /kaggle/working/result/
   pretrained_best_type: linking # labeling, linking
 
 pretrained_model_file: ~
