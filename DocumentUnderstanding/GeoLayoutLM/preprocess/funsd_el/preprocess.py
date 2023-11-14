@@ -12,14 +12,14 @@ VOCA = "bert-base-uncased"
 
 CLASSES = ["O", "HEADER", "QUESTION", "ANSWER"]
 CLASSES_VALID = ["HEADER", "QUESTION", "ANSWER"]
-INPUT_PATH = "/kaggle/working/funsd_sroie"
+INPUT_PATH = "/kaggle/working/invoice-convenience-store/invoice_convenience_store"
 anno_dir = 'annotations'
 # if not os.path.exists(INPUT_PATH):
 #     os.system("wget https://guillaumejaume.github.io/FUNSD/dataset.zip")
 #     os.system("unzip dataset.zip")
 #     os.system("rm -rf dataset.zip __MACOSX")
 
-OUTPUT_PATH = "/kaggle/working/funsd_sroie/funsd_geo"
+OUTPUT_PATH = "/kaggle/working/invoice-convenience-store/invoice_convenience_store/funsd_geo"
 os.makedirs(OUTPUT_PATH, exist_ok=True)
 os.makedirs(os.path.join(OUTPUT_PATH, "preprocessed"), exist_ok=True)
 
