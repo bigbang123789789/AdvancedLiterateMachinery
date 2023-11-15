@@ -89,22 +89,22 @@ def main():
         eval_kwargs = get_eval_kwargs_geolayoutlm_vie(cfg.dataset_root_path)
     else:
         raise ValueError(f"Unknown cfg.config={cfg.config}")
-    print(data_loader,len(data_loader))
+    #print(data_loader,len(data_loader))
     step_outputs = []
     for example_idx, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
         # Convert batch tensors to given device
-        print('example_idx',example_idx)
+        #print('example_idx',example_idx)
         device = next(net.parameters()).device
         for k in batch.keys():
             if isinstance(batch[k], torch.Tensor):
                 batch[k] = batch[k].to(device)
-        print('batch',batch)
+        #print('batch',batch)
         with torch.no_grad():
             head_outputs, loss_dict = net(batch)
-            print('head_outputs',head_outputs)
-            print('loss_dict',loss_dict)
+            #print('head_outputs',head_outputs)
+            #print('loss_dict',loss_dict)
         step_out = do_eval_step(batch, head_outputs, loss_dict, eval_kwargs, dump_dir=cfg[mode].dump_dir)
-        print(step_out)
+        #print(step_out)
         step_outputs.append(step_out)
 
     # Get scores
