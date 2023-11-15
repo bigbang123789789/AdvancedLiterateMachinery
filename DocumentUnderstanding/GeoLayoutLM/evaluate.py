@@ -13,7 +13,8 @@ import cv2
 from lightning_modules.data_modules.vie_dataset import VIEDataset
 from model import get_model
 from utils import get_class_names, get_config, get_label_map
-
+import torch.onnx
+import torchvision.models as models
 
 def main():
     mode = "val"
@@ -49,12 +50,15 @@ def main():
 
     net.to("cuda")
     net.eval()
-    onnx_filename = f"/kaggle/working/LinkPrediction.onnx"
-
-    net.prep_model_for_conversion(input_size=[1, 3, 768, 768]) # image shape of CIFAR10 images
-    dummy_input = torch.randn([1, 3, 768, 768], device=next(net.parameters()).device)
+   
+    # Provide an example input that matches the expected input shape of your model
+    example_input = torch.randn(1, 3, 768, 768)
     
-    torch.onnx.export(net, dummy_input, onnx_filename)
+    # Export the model to ONNX format
+    onnx_path = '/kaggle/working/LinkPrediction.onnx'
+    torch.onnx.export(model, example_input, onnx_path, verbose=True)
+    
+    print(f"Model successfully exported to {onnx_path}")
     
     if cfg.model.backbone in [
         "alibaba-damo/geolayoutlm-base-uncased",
