@@ -99,6 +99,7 @@ class GeoLayoutLMVIEModel(nn.Module):
         """
 
         input_ids = batch["input_ids"]
+        print('input_ids',input_ids)
         image = batch["image"]
         bbox = batch["bbox"]
         bbox_4p_normalized = batch["bbox_4p_normalized"]
