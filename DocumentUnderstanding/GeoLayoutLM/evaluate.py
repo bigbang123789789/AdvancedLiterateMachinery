@@ -104,6 +104,7 @@ def main():
             print('head_outputs',head_outputs)
             print('loss_dict',loss_dict)
         step_out = do_eval_step(batch, head_outputs, loss_dict, eval_kwargs, dump_dir=cfg[mode].dump_dir)
+        print(step_out)
         step_outputs.append(step_out)
 
     # Get scores
