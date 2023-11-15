@@ -52,7 +52,7 @@ def main():
     net.eval()
    
     # Provide an example input that matches the expected input shape of your model
-    example_input = torch.randn(1, 3, 768, 768)
+    example_input = torch.randn(2, 3, 768, 768)
     
     # Export the model to ONNX format
     onnx_path = '/kaggle/working/LinkPrediction.onnx'
