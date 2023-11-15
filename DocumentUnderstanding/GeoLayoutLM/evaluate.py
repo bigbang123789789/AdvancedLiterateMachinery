@@ -50,7 +50,7 @@ def main():
 
     net.to("cuda")
     net.eval()
-   
+    print(net)
     
     if cfg.model.backbone in [
         "alibaba-damo/geolayoutlm-base-uncased",
