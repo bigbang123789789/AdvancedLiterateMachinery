@@ -4,7 +4,7 @@
 workspace: /kaggle/working/workspace/
 
 dataset: funsd
-dataset_root_path: /kaggle/working/invoice-convenience-store/invoice_convenience_store
+dataset_root_path: /kaggle/working/dataset
 task: ee_el
 img_h: 768
 img_w: 768
@@ -12,7 +12,7 @@ img_w: 768
 model:
   backbone: alibaba-damo/geolayoutlm-large-uncased
   config_json: /kaggle/working/AdvancedLiterateMachinery/DocumentUnderstanding/GeoLayoutLM/configs/GeoLayoutLM/GeoLayoutLM_large_model_config.json
-  model_ckpt: /kaggle/input/re-linking-pt/epoch_182-f1_linking_0_8923.pt
+  model_ckpt: /kaggle/input/pretrained-sroie/kaggle/working/workspace/sroie_train/checkpoints/epoch=79-f1_linking=0.9617.pt
   head: vie
   use_inner_id: true
   max_prob_as_father: true
