@@ -51,14 +51,6 @@ def main():
     net.to("cuda")
     net.eval()
    
-    # Provide an example input that matches the expected input shape of your model
-    example_input = torch.randn(2, 3, 768, 768)
-    
-    # Export the model to ONNX format
-    onnx_path = '/kaggle/working/LinkPrediction.onnx'
-    torch.onnx.export(net, example_input, onnx_path, verbose=True)
-    
-    print(f"Model successfully exported to {onnx_path}")
     
     if cfg.model.backbone in [
         "alibaba-damo/geolayoutlm-base-uncased",
