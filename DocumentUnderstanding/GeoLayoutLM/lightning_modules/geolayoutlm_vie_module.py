@@ -233,15 +233,13 @@ def do_eval_step_el(batch, head_outputs, loss, eval_kwargs, dump_dir=''):
                 torch.zeros_like(head_outputs["logits4linking_list"][-1]))
 
         pr_el_labels = head_outputs["pred4linking2"]
-        max_index = pr_el_labels.argmax()     
-        print("Index of maximum value:", max_index)
+        max_index = pr_el_labels.argmax()    
 
     else:
         pr_el_labels = head_outputs["pred4linking"]
         max_index = pr_el_labels.argmax()
       
-        print("Index of maximum value:", max_index)
-
+       
         
     n_batch_gt_rel, n_batch_pr_rel, n_batch_correct_rel = eval_el_geo_batch(
         pr_el_labels,
