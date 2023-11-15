@@ -94,14 +94,15 @@ def main():
     for example_idx, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
         # Convert batch tensors to given device
         print('example_idx',example_idx)
-        print('batch',batch)
         device = next(net.parameters()).device
         for k in batch.keys():
             if isinstance(batch[k], torch.Tensor):
                 batch[k] = batch[k].to(device)
-
+        print('batch',batch)
         with torch.no_grad():
             head_outputs, loss_dict = net(batch)
+            print('head_outputs',head_outputs)
+            print('loss_dict',loss_dict)
         step_out = do_eval_step(batch, head_outputs, loss_dict, eval_kwargs, dump_dir=cfg[mode].dump_dir)
         step_outputs.append(step_out)
 
