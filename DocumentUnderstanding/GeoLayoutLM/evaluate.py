@@ -93,6 +93,8 @@ def main():
     step_outputs = []
     for example_idx, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
         # Convert batch tensors to given device
+        print('example_idx',example_idx)
+        print('batch',batch)
         device = next(net.parameters()).device
         for k in batch.keys():
             if isinstance(batch[k], torch.Tensor):
