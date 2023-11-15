@@ -50,7 +50,7 @@ def main():
 
     net.to("cuda")
     net.eval()
-    print(net)
+    
     
     if cfg.model.backbone in [
         "alibaba-damo/geolayoutlm-base-uncased",
@@ -89,7 +89,7 @@ def main():
         eval_kwargs = get_eval_kwargs_geolayoutlm_vie(cfg.dataset_root_path)
     else:
         raise ValueError(f"Unknown cfg.config={cfg.config}")
-
+    print(data_loader)
     step_outputs = []
     for example_idx, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
         # Convert batch tensors to given device
