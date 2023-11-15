@@ -47,7 +47,7 @@ train:
   val_interval: 1  # in epochs
 
 val:
-  batch_size: 2
+  batch_size: 1
   num_workers: 4
   limit_val_batches: 1.0
   dump_dir: /kaggle/working/funsd_result/
