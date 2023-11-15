@@ -56,7 +56,7 @@ def main():
     
     # Export the model to ONNX format
     onnx_path = '/kaggle/working/LinkPrediction.onnx'
-    torch.onnx.export(model, example_input, onnx_path, verbose=True)
+    torch.onnx.export(net, example_input, onnx_path, verbose=True)
     
     print(f"Model successfully exported to {onnx_path}")
     
