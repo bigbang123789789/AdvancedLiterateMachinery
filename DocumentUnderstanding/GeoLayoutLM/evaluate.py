@@ -49,7 +49,13 @@ def main():
 
     net.to("cuda")
     net.eval()
+    onnx_filename = f"/kaggle/working/LinkPrediction.onnx"
 
+    net.prep_model_for_conversion(input_size=[1, 3, 768, 768]) # image shape of CIFAR10 images
+    dummy_input = torch.randn([1, 3, 768, 768], device=next(net.parameters()).device)
+    
+    torch.onnx.export(net, dummy_input, onnx_filename)
+    
     if cfg.model.backbone in [
         "alibaba-damo/geolayoutlm-base-uncased",
         "alibaba-damo/geolayoutlm-large-uncased",
