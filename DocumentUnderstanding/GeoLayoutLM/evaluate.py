@@ -27,7 +27,7 @@ def main():
     cfg.seed=1
     cfg.cudnn_deterministic=False
     cfg.cudnn_benchmark=True
-    print(cfg)
+
 
     # if cfg.pretrained_model_file is None:
     #     pt_list = os.listdir(os.path.join(cfg.workspace, "checkpoints"))
@@ -120,7 +120,7 @@ def main():
             print(f"{key}: {value:.4f}", end=' | ')
         print()
     # Visualize
-    print(cfg)
+    
     if len(cfg[mode].dump_dir) > 0:
         visualize_tagging(cfg[mode].dump_dir)
         visualize_linking(cfg[mode].dump_dir)
