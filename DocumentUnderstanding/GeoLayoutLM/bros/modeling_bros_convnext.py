@@ -296,7 +296,9 @@ class MultiPairsGeometricHead(nn.Module):
 
         negative_idx_pred = (score_prev < 0.5).float().view(batch_size, -1) # [b, block_num * block_num]
         negative_idx_pred = 1 - (1 - negative_idx_pred) * block_pair_mask # the padded blocks could not have links
-        max_valid = min((1 - negative_idx_pred).sum(1).max().long().item(), self.max_rel_enc) # Restrict the number of relations to save memory usage
+        # max_valid = min((1 - negative_idx_pred).sum(1).max().long().item(), self.max_rel_enc) # Restrict the number of relations to save memory usage
+        max_valid = torch.min((1 - negative_idx_pred).sum(1).max().long(), torch.tensor(self.max_rel_enc)).item()
+
         max_valid = max(max_valid, 1)
         feat_pair_now = feat_pair * (1 - negative_idx_pred.unsqueeze(-1))
         idx_tmp = negative_idx_pred.argsort(1)
