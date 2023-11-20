@@ -86,10 +86,7 @@ class GeoLayoutLMModel(BrosPreTrainedModel):
         logger.info(kwargs)
         print("kwargs")
         print(kwargs)
-        logger.info("kwargs line_bbox")
-        logger.info(kwargs["line_bbox"])
-        print("kwargs line_bbox")
-        print(kwargs["line_bbox"])
+
         kwargs["line_bbox"] = bbox
         # ################ get text representation ################
         outputs = self.text_encoder(
