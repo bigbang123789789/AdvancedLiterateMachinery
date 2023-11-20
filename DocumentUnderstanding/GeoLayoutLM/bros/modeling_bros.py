@@ -1029,6 +1029,10 @@ class BrosModel(BrosPreTrainedModel):
 
     def __init__(self, config, add_pooling_layer=True):
         super().__init__(config)
+        logger.info("config")
+        logger.info(config)
+        print("config")
+        print(config)
         self.config = config
 
         self.embeddings = BrosEmbeddings(config)
