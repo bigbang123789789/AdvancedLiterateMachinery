@@ -124,7 +124,7 @@ class BrosEmbeddings(nn.Module):
 
     def __init__(self, config):
         logger.info(config)
-        print(config)
+        # print(config)
         
         super().__init__()
         self.word_embeddings = nn.Embedding(
