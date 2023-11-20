@@ -197,8 +197,9 @@ class BrosEmbeddings(nn.Module):
             lower_position_embeddings = self.y_position_embeddings(bbox[:, :, 3])
         except IndexError as e:
             raise IndexError("The :obj:`bbox`coordinate values should be within 0-1000 range.") from e
-        print('bbox: ',bbox)
-        print('bbox: ',bbox.shape)
+        logger.info("bbox")
+            
+        logger.info(bbox.shape)
         
         h_position_embeddings = self.h_position_embeddings(
             bbox[:, :, 3] - bbox[:, :, 1])
