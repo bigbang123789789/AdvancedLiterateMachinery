@@ -200,7 +200,8 @@ class BrosEmbeddings(nn.Module):
         logger.info("bbox")
             
         logger.info(bbox.shape)
-        
+        print("bbox")
+        print(bbox.shape)
         h_position_embeddings = self.h_position_embeddings(
             bbox[:, :, 3] - bbox[:, :, 1])
         w_position_embeddings = self.w_position_embeddings(
