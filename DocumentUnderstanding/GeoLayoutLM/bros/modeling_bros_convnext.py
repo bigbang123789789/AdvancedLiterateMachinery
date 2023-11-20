@@ -82,10 +82,10 @@ class GeoLayoutLMModel(BrosPreTrainedModel):
         return_dict = (
             return_dict if return_dict is not None else self.config.use_return_dict
         )
-        logger.info("kwargs")
-        logger.info(kwargs)
-        print("kwargs")
-        print(kwargs)
+        # logger.info("kwargs")
+        # logger.info(kwargs)
+        # print("kwargs")
+        # print(kwargs)
 
         kwargs["line_bbox"] = bbox
         # ################ get text representation ################
